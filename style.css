@@ -1,0 +1,165 @@
+@import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@300;500;600;700&display=swap');
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    --first-color: #060447;
+    --second-color: #fff38a;
+}
+
+body{
+    font-family: 'Montserrat', sans-serif;
+    background: linear-gradient(var(--first-color), #060447f3), url("pics/zalij.avif");
+    color: var(--second-color);
+    background-position: center center;
+    background-size: cover;
+    font-size: 1.2em;
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+section{
+    width: 80%;
+    max-width: 800px;
+    margin: 100px auto;
+    position: relative;
+}
+
+article{
+    display: flex;
+    justify-content: space-between;
+}
+
+.infos h1{
+    font-size: 35px;
+    padding-bottom: 20px;
+}
+
+.infos p{
+    font-weight: 300;
+    font-size: 17px;
+    width: 70%;
+}
+
+.pic img{
+    width: 300px;
+    height: 420px;
+    object-fit: cover;
+}
+
+.time{
+    position: absolute;
+    top: 220px;
+}
+
+.date{
+    font-family: 'Righteous', cursive;
+    font-size: 170px;
+}
+
+.container-progress{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 30px;
+}
+
+.arrows{
+    display: flex;
+    gap: 10px;
+    margin-left: 10px;
+}
+
+.arrows .arrow{
+    position: relative;
+    height: 20px;
+    width: 20px;
+    color: var(--first-color);
+    font-size: 20px;
+    cursor: pointer;
+    padding: 1em;
+    background: var(--second-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.arrows .arrow.disable-arrow{
+    cursor: default;
+    opacity: .4;
+}
+
+.progress{
+    width: 700px;
+    height: 2px;
+    position: relative;
+    display: flex;
+    justify-content: space-between;
+    background: #fff38a0a;
+    align-content: center;
+}
+
+.progress .progress-line{
+    position: absolute;
+    left: 0;
+    right: 0;
+    height: 100%;
+    background: var(--second-color);
+    opacity: 1;
+    transition: .3s width;
+}
+
+.progress .circle{
+    transform: translateY(-10px);
+    height: 20px;
+    width: 20px;
+    border-radius: 50%;
+    background-color: #363528;
+}
+
+.progress .circle.active{
+    opacity: 1;
+    background-color: var(--second-color);
+}
+
+@media screen and (max-width: 1000px){
+    .progress{
+        width: 500px;
+    }
+    .time{
+        position: static;
+    }
+}
+
+@media screen and (max-width: 850px){
+    article{
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        gap: 40px;
+    }
+}
+
+
+@media screen and (max-width: 500px){
+    section{
+        width: 95%;
+    }
+    .container-progress{
+        gap: 10px;
+    }
+    .date{
+        font-size: 100px;
+    }
+    .pic img{
+        width: 240px;
+        height: 336px;
+    }
+}
